@@ -40,3 +40,9 @@ body{
 #block0, #block3, #block6{
     margin-left: 0px;
 } 
+.fa-times, .fa-circle{
+    font-size: 50px;
+}
+.fa-times{
+    color: #ffffff;
+}
