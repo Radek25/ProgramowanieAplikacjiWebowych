@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #3bceac;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+   justify-content: center;
+}
+#game-board{
+    width: 312px;
+    height: 312px;
+    margin-top: 150px;
+    background-color: #0ead69;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.block{
+    width: 100px;
+    height: 100px;
+    background-color: #3bceac;
+    margin: 3px;
+
+}
+#block0, #block1, #block2{
+    margin-top: 0px;
+} 
+#block2, #block5, #block8{
+    margin-right: 0px;
+} 
+#block6, #block6, #block8{
+    margin-bottom: 0px;
+} 
+#block0, #block3, #block6{
+    margin-left: 0px;
+} 
