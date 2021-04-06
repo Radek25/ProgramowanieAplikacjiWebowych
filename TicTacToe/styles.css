@@ -24,7 +24,9 @@ body{
     height: 100px;
     background-color: #3bceac;
     margin: 3px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #block0, #block1, #block2{
     margin-top: 0px;
