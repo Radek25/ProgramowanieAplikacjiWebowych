@@ -3,12 +3,21 @@ var Sings;
     Sings["X"] = "X";
     Sings["O"] = "O";
 })(Sings || (Sings = {}));
-var GameBoard = document.querySelector('#game-board');
-var BlockArray = [
-    null, null, null,
-    null, null, null,
-    null, null, null
+var WinningPosition = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ];
+var GameBoard = document.querySelector('#game-board');
+var TypeOfSignSwitch = true;
+var FullBlock = [true, true, true, true, true, true, true, true, true];
+var BlockArray = ['', '', '', '', '', '', '', '', ''];
+var GameWin = false;
 var _loop_1 = function (i) {
     var Block = document.createElement('div');
     Block.setAttribute('id', 'block' + i.toString());
@@ -17,11 +26,9 @@ var _loop_1 = function (i) {
     GameBoard.appendChild(Block);
 };
 //Creating a signs boards
-for (var i = 0; i < BlockArray.length; i++) {
+for (var i = 0; i < 9; i++) {
     _loop_1(i);
 }
-var TypeOfSignSwitch = true;
-var FullBlock = [true, true, true, true, true, true, true, true, true];
 //Adding signs to boards
 function AddSign(IndexOfBlock, Block) {
     if (TypeOfSignSwitch == true && FullBlock[IndexOfBlock] == true) {
@@ -43,8 +50,20 @@ function AddSign(IndexOfBlock, Block) {
 }
 //Checking win
 function CheckWin() {
-    // console.log(BlockArray);
-    for (var i = 0; i < BlockArray.length; i++) {
-        console.log(BlockArray[i]);
+    for (var index = 0; index < 8; index++) {
+        var WinExeption = WinningPosition[index];
+        var a = WinExeption[0];
+        var b = WinExeption[1];
+        var c = WinExeption[2];
+        var AA = (BlockArray[a] + BlockArray[b] + BlockArray[c]);
+        var BB = 'OOO';
+        var CC = 'XXX';
+        if (AA === BB) {
+            alert('Wygrał: O');
+        }
+        if (AA === CC) {
+            alert('Wygrał: X');
+        }
     }
+    // console.log(BlockArray);
 }

@@ -3,16 +3,25 @@ enum Sings{
     O = 'O'
 }
 
-let GameBoard : Element = document.querySelector('#game-board');
-
-let BlockArray: string[] = [
-    null, null, null,
-    null, null, null,
-    null, null, null
+const WinningPosition : number[][] = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ];
 
+let GameBoard : Element = document.querySelector('#game-board');
+let TypeOfSignSwitch : boolean = true;
+let FullBlock : boolean[] = [true, true, true, true,true, true, true, true, true];
+let BlockArray: string[] = ['', '', '', '', '', '', '', '', ''];
+let GameWin : boolean = false;
+
 //Creating a signs boards
-for (let i = 0; i < BlockArray.length; i++) {
+for (let i = 0; i < 9; i++) {
        let Block = document.createElement('div');
        Block.setAttribute('id', 'block' + i.toString());
        Block.addEventListener('click', ()=>AddSign(i, Block));
@@ -20,8 +29,6 @@ for (let i = 0; i < BlockArray.length; i++) {
        GameBoard.appendChild(Block);
 }
 
-let TypeOfSignSwitch : boolean = true;
-let FullBlock : boolean[] = [true, true, true, true,true, true, true, true, true];
 //Adding signs to boards
 function AddSign(IndexOfBlock : number, Block : HTMLDivElement){ 
     if (TypeOfSignSwitch == true && FullBlock[IndexOfBlock] == true) {
@@ -44,8 +51,20 @@ function AddSign(IndexOfBlock : number, Block : HTMLDivElement){
 
 //Checking win
 function CheckWin() {
-    // console.log(BlockArray);
-    for (let i = 0; i < BlockArray.length; i++) {
-        console.log(BlockArray[i]);
+    for (let index = 0; index < 8; index++) {
+        const WinExeption = WinningPosition[index];
+        let a : number = WinExeption[0];
+        let b : number = WinExeption[1];
+        let c : number = WinExeption[2];
+        let AA : string = (BlockArray[a]+BlockArray[b]+BlockArray[c]);
+        let BB : string = 'OOO';
+        let CC : string = 'XXX';
+        if (AA === BB) {
+            alert('Wygrał: O')
+        }
+        if (AA === CC) {
+            alert('Wygrał: X')
+        }
     }
+    // console.log(BlockArray);
 }
