@@ -4,7 +4,7 @@ class Table{
     Gameboard : HTMLLIElement;
     Button : HTMLButtonElement;
     Table : HTMLElement;
-    
+
     constructor(){
         this.Gameboard = document.querySelector('.gameboard');
         this.Button = document.querySelector('#btn');

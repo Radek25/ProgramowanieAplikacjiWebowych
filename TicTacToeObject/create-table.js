@@ -1,5 +1,6 @@
 var Table = /** @class */ (function () {
     function Table() {
+        this.ExistTable = false;
         this.Gameboard = document.querySelector('.gameboard');
         this.Button = document.querySelector('#btn');
         this.Table = document.createElement('table');
@@ -12,7 +13,9 @@ var Table = /** @class */ (function () {
         (_a = this.Button) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () {
             _this.Column = parseInt(document.querySelector('#column-value').value);
             _this.Row = parseInt(document.querySelector('#row-value').value);
+            _this.ExistTable = true;
             _this.Gameboard.style.display = 'flex';
+            console.log(_this.ExistTable);
             _this.CreateTable();
         });
     };
