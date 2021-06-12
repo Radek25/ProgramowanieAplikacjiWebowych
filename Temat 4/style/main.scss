@@ -1,0 +1,47 @@
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 10px;
+    background: linear-gradient(rgb(250, 108, 153) 5%, rgb(157, 140, 252) 60%, rgb(0, 200, 223) 100%);
+    background-size: 96vw 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Baloo Tammudu 2', cursive;
+    h1{
+       width: 100%;
+       margin-bottom: 20px;
+       text-align: center;
+       color:  white;
+       font-family: 'Do Hyeon', sans-serif;
+       cursor: pointer;
+    }
+    .game-keeper{
+        width: 50%; 
+        margin-top: 150px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+    .tic-icon, .ships-icon{
+        width: 30%;
+        height: 300px;
+        margin: 10px 40px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .tic-icon{
+        background-image: url('../dist/img/TicTacTouIcon.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .ships-icon{
+        background-image: url('../dist//img/BattleShipsIcon.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

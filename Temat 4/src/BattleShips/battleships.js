@@ -10,6 +10,9 @@ var BattleShipsGame = /** @class */ (function () {
         test.classList.add('battleships-div');
         test.innerHTML = 'Tutaj bedzie gra w statki!';
         document.body.appendChild(test);
+        var button = document.createElement('button');
+        button.innerHTML = 'TEKST!!!';
+        test.appendChild(button);
     };
     return BattleShipsGame;
 }());
