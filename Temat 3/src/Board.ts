@@ -1,8 +1,8 @@
 import {Cell} from './Cell';
 
 export class Board{
-    cells: Cell[];
-    currentSymbol: number = 1;
+    protected cells: Cell[];
+    protected currentSymbol: number = 1;
 
     constructor (size: number){
         this.cells = new Array(size);
@@ -21,7 +21,7 @@ export class Board{
         }
     }
 
-    makeMove(cell: Cell): void{
+    public makeMove(cell: Cell): void{
         if(cell.boolenValue === true){
             cell.setCellValue(this.currentSymbol);
             this.currentSymbol = this.currentSymbol === 1? -1 : 1; 
@@ -33,7 +33,7 @@ export class Board{
         }
     }
 
-    checkWin(): void{
+    public checkWin(): void{
         const WinningPosition: number[][] = [
             [0, 1, 2],
             [3, 4, 5],

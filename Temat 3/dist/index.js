@@ -542,6 +542,12 @@ exports.Board = Board;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Cell = void 0;
+var Chars;
+(function (Chars) {
+    Chars["O"] = "O";
+    Chars["X"] = "X";
+    Chars["EMPTY"] = " ";
+})(Chars || (Chars = {}));
 var Cell = (function () {
     function Cell(cell) {
         this.boolenValue = true;
@@ -551,14 +557,14 @@ var Cell = (function () {
         switch (value) {
             case -1:
                 this.htmlElemet.innerHTML = '<i class="far fa-circle"></i>';
-                this.symbol = 'O';
+                this.symbol = Chars.O;
                 break;
             case 1:
                 this.htmlElemet.innerHTML = '<i class="fas fa-times"></i>';
-                this.symbol = 'X';
+                this.symbol = Chars.X;
                 break;
             default:
-                this.htmlElemet.innerHTML = ' ';
+                this.htmlElemet.innerHTML = Chars.EMPTY;
                 break;
         }
     };
@@ -648,23 +654,29 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ../style/main.scss */ "./style/main.scss");
 var Board_1 = __webpack_require__(/*! ./Board */ "./src/Board.ts");
-var input = document.querySelector('input');
-var buttonSave = document.querySelector('#save');
-var buttonEndGage = document.querySelector('#end');
-buttonSave.addEventListener('click', function () {
+var input = document.querySelector("input");
+var buttonSave = document.querySelector("#save");
+var buttonEndGage = document.querySelector("#end");
+buttonSave.addEventListener("click", function () {
     var size = parseInt(input.value);
     if (size > 2 && size < 6) {
         var board = new Board_1.Board(size);
         board.makeMove;
-        input.style.display = 'none';
-        buttonSave.style.display = 'none';
-        buttonEndGage.style.display = 'flex';
+        input.style.display = "none";
+        buttonSave.style.display = "none";
+        buttonEndGage.style.display = "flex";
     }
     else {
-        alert('Zbyt mała lub zbyt duża plansza!');
+        alert("Zbyt mała lub zbyt duża plansza!");
     }
 });
-buttonEndGage.addEventListener('click', function () { return location.reload(); });
+buttonEndGage.addEventListener("click", function () {
+    input.style.display = "flex";
+    buttonSave.style.display = "flex";
+    buttonEndGage.style.display = "none";
+    var table = document.querySelector("#tictactoe");
+    table.innerHTML = "";
+});
 
 })();
 
