@@ -1,0 +1,51 @@
+@import './mixins.scss';
+@import './colors.scss';
+body{
+    @include divSize(100%, 100%);
+    @include flexOption;
+    @include mainFont;
+    padding: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    background-color: var(--bgColor);
+    h1{
+        @include divSize(100%, auto);
+        @include flexOption;
+        @include titleFont;
+        color: var(--titleColor);
+    }
+    .pattern-button{
+        @include divSize(150px, 30px);
+        @include mainBorder($oceanBlue);
+        @include mainRadius;
+        color: $white;
+        background-color: $darkGreen;
+        position: absolute;
+        padding: 5px;
+        top: 10px;
+        right: 10px;
+        outline: none;
+        cursor: pointer;
+    }
+    .game-keeper{
+        @include divSize(50%, 320px);
+        @include flexOption;
+        @include mainRadius;
+        margin: 150px auto 0;
+        padding: 10px 20px;
+        .tic-icon, .ships-icon{
+            @include divSize(200px, 240px);
+            @include mainRadius;
+            @include iconDeflautPosition;
+            @include mainBorder(var(--borderColor));
+            cursor: pointer;
+            margin: 10px 40px;
+        }
+        .tic-icon{
+            @include ticIcon;
+        }
+        .ships-icon{
+            @include shipIcon;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import '../style/mixins.scss';
+*{
+    @include deflautSettings;
+}
+#game-field{
+    @include divSize(90vw, 90vh);
+    @include flexOption;
+    @include mainRadius;
+    @include mainFont;
+    background-color: $oceanBlue;
+    flex-wrap: wrap;
+    position: relative;
+    table{
+        margin-top: 80px;
+        background-color: $oceanBlue
+    }
+   .cell{
+       @include divSize(100px, 100px);
+       @include mainBorder($darkGreen);
+        background-color: $darkGreen;
+       text-align: center;
+       .fa-times, .fa-circle{
+            font-size: 50px;
+        }
+        .fa-times{
+            color: $white;
+        }
+   }
+   .control-panel{
+        @include divSize(100%, auto);
+        @include flexOption;
+   }
+   input{
+        @include divSize(250px, 40px);
+        @include mainBorder($darkGreen);
+        @include mainRadius(5px);
+        padding-left: 10px;
+        outline: none;
+   }
+   button{
+       @extend input;
+       @include divSize(50px, 30px);
+       @include mainRadius(5px);
+       margin: 0 20px;
+       padding: 0;
+       background-color: $darkGreen;
+   }
+   .end{
+        @include divSize(80px, 30px);
+        @include mainBorder($white);
+        background-color: $darkGrey;
+        color: $white;
+        display: none;
+        text-align: center;
+        position: absolute;
+        z-index: 3;
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+   }
+   .winner-div{
+        @extend .end;
+        @include divSize(50%, auto);
+        @include mainRadius(10px);
+        padding: 5px;
+        flex-wrap: wrap;
+        top: 10px;
+        .symbol{
+            @include divSize(100%, auto);
+            @include flexOption;
+            font-size: 40px;
+            font-weight: 900;
+        }
+    }
+}
