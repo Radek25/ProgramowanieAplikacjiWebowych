@@ -1,0 +1,15 @@
+@import '../style/mixins.scss';
+@import '../style/tictactou.scss';
+.battleships-div{
+    @extend #game-field;
+    font-size: 50px;
+    button{
+        @include divSize (100px, 40px);
+        @include mainBorder($white);
+        background-color: $darkGrey;
+        position: absolute;
+        top: 200px;
+        color: $white;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,58 @@
+//Size of pages mixins
+@mixin  divSize($width, $height){
+    width: $width;
+    height: $height;
+}
+@mixin flexOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin  deflautSettings {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Colors
+$darkGrey: #3f3f3f;
+$lightGreen: #8cc534;
+$darkGreen: #0ead69;
+$oceanBlue: #3bceac;
+$white: #ffffff;
+
+//Backgrounds options
+@mixin  gameboadrColorLight{
+    background-color: $oceanBlue;
+}
+@mixin  gameboadrColorDark{
+    background-color: $lightGreen;
+}
+
+//Fonts mixins
+@mixin  mainFont {
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+@mixin titleFont {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+//Border mixins
+@mixin  mainBorder($colorOfBorder) {
+    border: 2px solid $colorOfBorder;
+}
+@mixin mainRadius($radius: 10px){
+    border-radius: $radius;
+}
+
+//Games Icons
+@mixin iconDeflautPosition{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin ticIcon {
+    background-image: url('../dist/img/TicTacTouIcon.jpg');
+}
+@mixin shipIcon {
+    background-image: url('../dist/img/BattleShipsIcon.jpg');
+}

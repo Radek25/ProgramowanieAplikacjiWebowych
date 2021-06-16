@@ -1,0 +1,15 @@
+:root{
+    --bgColor: #ffffff;
+    --titleColor: #3f3f3f;
+    --borderColor: #3f3f3f;
+}
+[pattern='darkMode']{
+    --bgColor: #3f3f3f;
+    --titleColor: #ffffff;
+    --borderColor: #8cc534;
+}
+[pattern ='lightMode']{
+    --bgColor: #ffffff;
+    --titleColor: #3f3f3f;
+    --borderColor: #3f3f3f;
+}
