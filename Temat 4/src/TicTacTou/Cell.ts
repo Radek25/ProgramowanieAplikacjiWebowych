@@ -1,3 +1,4 @@
+import { Chars } from "../GameEnum/enum";
 export class Cell{
     cellValue: number;
     htmlElemet: HTMLElement;
@@ -12,14 +13,14 @@ export class Cell{
         switch(value){
             case -1:
                 this.htmlElemet.innerHTML = '<i class="far fa-circle"></i>';
-                this.symbol = 'O';
+                this.symbol = Chars.O;
             break;
             case 1:
                 this.htmlElemet.innerHTML = '<i class="fas fa-times"></i>';
-                this.symbol = 'X';
+                this.symbol = Chars.X
             break;
             default: 
-                this.htmlElemet.innerHTML = ' ';
+                this.htmlElemet.innerHTML = Chars.EMPTY;
             break;
         }
     }

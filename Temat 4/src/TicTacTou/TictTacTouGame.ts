@@ -2,7 +2,7 @@ import { Board } from './Board';
 import { Cell } from './Cell';
 
 export class TicTacTou{
-    name: string;
+    name: string; //modyfikatory
     gameField: HTMLElement;
     gameTable: HTMLTableElement;
     controlPanel: HTMLElement;

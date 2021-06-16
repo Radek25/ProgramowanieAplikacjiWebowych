@@ -7,7 +7,7 @@ import {NameOfGames} from './GameEnum/enum'
 
 
 class Main {
-    title: HTMLElement;
+    title: HTMLElement; 
     gamesKeeper: HTMLElement;
     ticIcon: HTMLElement;
     shipsIcon: HTMLElement;

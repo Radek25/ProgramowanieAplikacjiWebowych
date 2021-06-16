@@ -651,12 +651,18 @@ exports.BattleShipsGame = BattleShipsGame;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.NameOfGames = void 0;
+exports.Chars = exports.NameOfGames = void 0;
 var NameOfGames;
 (function (NameOfGames) {
     NameOfGames["TicTacTou"] = "TicTacTou";
     NameOfGames["BattleShips"] = "BattleShips";
 })(NameOfGames = exports.NameOfGames || (exports.NameOfGames = {}));
+var Chars;
+(function (Chars) {
+    Chars["O"] = "O";
+    Chars["X"] = "X";
+    Chars["EMPTY"] = " ";
+})(Chars = exports.Chars || (exports.Chars = {}));
 
 
 /***/ }),
@@ -754,11 +760,12 @@ exports.Board = Board;
 /*!*******************************!*\
   !*** ./src/TicTacTou/Cell.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Cell = void 0;
+var enum_1 = __webpack_require__(/*! ../GameEnum/enum */ "./src/GameEnum/enum.ts");
 var Cell = (function () {
     function Cell(cell) {
         this.boolenValue = true;
@@ -768,14 +775,14 @@ var Cell = (function () {
         switch (value) {
             case -1:
                 this.htmlElemet.innerHTML = '<i class="far fa-circle"></i>';
-                this.symbol = 'O';
+                this.symbol = enum_1.Chars.O;
                 break;
             case 1:
                 this.htmlElemet.innerHTML = '<i class="fas fa-times"></i>';
-                this.symbol = 'X';
+                this.symbol = enum_1.Chars.X;
                 break;
             default:
-                this.htmlElemet.innerHTML = ' ';
+                this.htmlElemet.innerHTML = enum_1.Chars.EMPTY;
                 break;
         }
     };

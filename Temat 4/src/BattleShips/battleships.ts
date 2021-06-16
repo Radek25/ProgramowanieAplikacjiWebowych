@@ -1,5 +1,5 @@
 export class BattleShipsGame{
-    name: string;
+    name: string; 
 
     constructor(){
         this.name = 'BattleShips';
