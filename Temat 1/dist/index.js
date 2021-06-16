@@ -449,6 +449,76 @@ module.exports = function (list, options) {
   };
 };
 
+/***/ }),
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+__webpack_require__(/*! ../style/main.scss */ "./style/main.scss");
+var personeName = 'John';
+var div1 = document.createElement('div');
+div1.classList.add('div');
+document.body.appendChild(div1);
+div1.innerHTML = "<h1>Hello " + personeName + "!</h1>";
+var div2 = document.createElement('div');
+div2.classList.add('div');
+document.body.appendChild(div2);
+var PersonTaskOne = (function () {
+    function PersonTaskOne(name, surname, age) {
+        this.Name = name;
+        this.Surname = surname;
+        this.Age = age;
+    }
+    PersonTaskOne.prototype.Show = function () {
+        div2.innerHTML = "Witaj " + this.Name + " i " + this.Surname + " mam " + this.Age + " lat!";
+    };
+    return PersonTaskOne;
+}());
+var p1 = new PersonTaskOne('John', 'Black', 11);
+p1.Show();
+var users = [
+    { name: 'John', surname: 'Smith', age: 25, role: 'user' },
+    { name: 'Adam', surname: 'Johnson', age: 35, role: 'user' },
+    { name: 'Andy', surname: 'Cole', age: 18, role: 'user' },
+];
+var admins = [
+    { name: 'Matthew', surname: 'Ryan', age: 43, role: 'admin' },
+    { name: 'Adam', surname: 'Terry', age: 24, role: 'admin' },
+];
+function logPerson(person) {
+    console.log(person.name + " " + person.surname + " " + person.age + " " + person.role);
+}
+function filterPersons(persons, criteria) {
+    return persons.filter(function (person) { return person.name == criteria.name || person.surname == criteria.surname || person.age == criteria.age || person.role == criteria.role; });
+}
+console.log('***Zadanie1***');
+users.forEach(logPerson);
+admins.forEach(logPerson);
+console.log('--------------------------');
+console.log('***Zadanie2***');
+var usersAndAdmins = __spreadArray(__spreadArray([], users), admins);
+usersAndAdmins.forEach(function (usersAndAdmins) { return logPerson(usersAndAdmins); });
+console.log('--------------------------');
+console.log('***Zadanie3***');
+var filteredAge = usersAndAdmins.filter(function (usersAndAdmins) { return usersAndAdmins.age > 25; });
+filteredAge.forEach(logPerson);
+console.log('--------------------------');
+console.log('***Zadanie4***');
+var filteredName = filterPersons(usersAndAdmins, { name: 'Adam' });
+filteredName.forEach(logPerson);
+console.log('--------------------------');
+
+
 /***/ })
 
 /******/ 	});
@@ -471,7 +541,7 @@ module.exports = function (list, options) {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -519,40 +589,12 @@ module.exports = function (list, options) {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-var exports = __webpack_exports__;
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__webpack_require__(/*! ../style/main.scss */ "./style/main.scss");
-var personeName = 'John';
-var div1 = document.createElement('div');
-div1.classList.add('div');
-document.body.appendChild(div1);
-div1.innerHTML = "<h1>Hello " + personeName + "!</h1>";
-var div2 = document.createElement('div');
-div2.classList.add('div');
-document.body.appendChild(div2);
-var Person = (function () {
-    function Person(name, surname, age) {
-        this.Name = name;
-        this.Surname = surname;
-        this.Age = age;
-    }
-    Person.prototype.Show = function () {
-        div2.innerHTML = "Witaj " + this.Name + " i " + this.Surname + " mam " + this.Age + " lat!";
-    };
-    return Person;
-}());
-var p1 = new Person('John', 'Black', 11);
-p1.Show();
-
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map

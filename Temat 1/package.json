@@ -19,9 +19,6 @@
 		"dev": "webpack --mode development",
 		"prod": "webpack --mode production"
 	},
-	"author": "Paweł Malina",
-	"license": "MIT",
-	"devDependencies": {
-		"@types/canvas-confetti": "^1.4.0"
-	}
+	"author": "Radosław Kot",
+	"license": "MIT"
 }
